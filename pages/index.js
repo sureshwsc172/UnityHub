@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 const SITE_URL = "https://unityhub-sigma.vercel.app";
 
@@ -64,7 +65,6 @@ export default function Home() {
           content="Free rigs, props, and environments for indie and mobile Unity developers."
         />
 
-        {/* TODO: after AdSense approval, replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3126290233072035"
@@ -80,6 +80,17 @@ export default function Home() {
             who'd rather ship a game than model a tree.
           </p>
         </header>
+
+        <section className="intro-copy">
+          <p>
+            Every source below is hand-checked: actively maintained, free to
+            use in a commercial game, and not a dead mirror of some
+            abandoned pack. If you're building on Kotlin/Compose or plain
+            Unity and need something today, start with Kenney or the Unity
+            Asset Store's free filter — both give you Unity-ready prefabs,
+            not just raw meshes you'll have to rig yourself.
+          </p>
+        </section>
 
         <a href={SUBMIT_EMAIL} className="submit-block">
           <span className="submit-title">Add a resource, or start a thread</span>
@@ -98,7 +109,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* TODO: after creating an ad unit in AdSense, replace data-ad-slot="0000000000" with your real slot ID */}
         <div className="ad-slot">
           <ins
             className="adsbygoogle"
@@ -171,7 +181,13 @@ export default function Home() {
           </div>
         </section>
 
-        <footer>Prefer FBX or glTF format for the cleanest Unity import.</footer>
+        <footer>
+          <p>Prefer FBX or glTF format for the cleanest Unity import.</p>
+          <nav className="footer-nav">
+            <Link href="/about">About</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+          </nav>
+        </footer>
       </div>
 
       <style jsx global>{`
@@ -353,12 +369,31 @@ export default function Home() {
           font-size: 0.8rem;
           color: var(--accent-2);
         }
+        .intro-copy p {
+          color: var(--text-muted);
+          font-size: 0.92rem;
+          line-height: 1.6;
+          max-width: 64ch;
+          margin: 0 0 28px;
+        }
         footer {
           margin-top: 32px;
           font-size: 0.82rem;
           color: var(--text-muted);
           border-top: 1px solid var(--border);
           padding-top: 16px;
+        }
+        footer p {
+          margin: 0 0 10px;
+        }
+        .footer-nav {
+          display: flex;
+          gap: 16px;
+        }
+        .footer-nav a {
+          color: var(--accent-2);
+          text-decoration: none;
+          font-size: 0.82rem;
         }
       `}</style>
     </main>
