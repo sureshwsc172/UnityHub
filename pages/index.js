@@ -67,7 +67,7 @@ export default function Home() {
         {/* TODO: after AdSense approval, replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID */}
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3126290233072035"
           crossOrigin="anonymous"
         />
       </Head>
