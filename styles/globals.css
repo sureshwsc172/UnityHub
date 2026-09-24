@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg: #101826;
+  --surface: #16213a;
+  --border: #2b3b5c;
+  --text: #eef1f7;
+  --text-muted: #94a3bf;
+  --accent: #f2a541;
+  --accent-ink: #101826;
+  --accent-2: #5fb8d6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, sans-serif;
+}
