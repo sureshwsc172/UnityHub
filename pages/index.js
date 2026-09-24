@@ -1,3 +1,7 @@
+import Head from "next/head";
+
+const SITE_URL = "https://unityhub-sigma.vercel.app";
+
 const resources = [
   {
     title: "Unity Asset Store",
@@ -37,6 +41,37 @@ const SUBMIT_EMAIL =
 export default function Home() {
   return (
     <main className="page">
+      <Head>
+        <title>Free Unity 3D Model Hub — Assets, Rigs &amp; Props</title>
+        <meta
+          name="description"
+          content="A curated list of free 3D model and asset sources for Unity: Unity Asset Store, Kenney, Poly Haven, Quaternius, and Sketchfab. Built for indie and mobile game developers."
+        />
+        <link rel="canonical" href={SITE_URL} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:title" content="Free Unity 3D Model Hub" />
+        <meta
+          property="og:description"
+          content="Free rigs, props, and environments for indie and mobile developers. All the best free Unity asset sources in one place."
+        />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Free Unity 3D Model Hub" />
+        <meta
+          name="twitter:description"
+          content="Free rigs, props, and environments for indie and mobile Unity developers."
+        />
+
+        {/* TODO: after AdSense approval, replace ca-pub-XXXXXXXXXXXXXXXX with your real Publisher ID */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          crossOrigin="anonymous"
+        />
+      </Head>
+
       <div className="container">
         <header className="header">
           <h1>Unity 3D Model Hub</h1>
@@ -62,6 +97,79 @@ export default function Home() {
             </a>
           ))}
         </div>
+
+        {/* TODO: after creating an ad unit in AdSense, replace data-ad-slot="0000000000" with your real slot ID */}
+        <div className="ad-slot">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+            data-ad-slot="0000000000"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+        </div>
+
+        <section className="affiliate-section">
+          <h2>Paid picks worth it</h2>
+          <p className="section-intro">
+            Free assets get you far — these are paid packs worth the money if you want to go further.
+          </p>
+          <div className="affiliate-grid">
+            <a
+              href="https://assetstore.unity.com/3d"
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="affiliate-card"
+            >
+              <div className="card-title">Unity Asset Store — Paid 3D</div>
+              <div className="card-desc">Full catalog of paid models, environments, and character packs.</div>
+            </a>
+            <a
+              href="https://sketchfab.com/store"
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="affiliate-card"
+            >
+              <div className="card-title">Sketchfab Store</div>
+              <div className="card-desc">Premium models from independent 3D artists, ready to license.</div>
+            </a>
+          </div>
+        </section>
+
+        <section className="sponsor-section">
+          <h2>Get your asset pack featured</h2>
+          <p className="section-intro">
+            Have a Unity asset pack or plugin? Reach indie and mobile developers by sponsoring a listing here.
+          </p>
+          <a
+            href="mailto:sureshwsc174@gmail.com?subject=Sponsor%20a%20listing%20-%20Unity%203D%20Model%20Hub"
+            className="sponsor-block"
+          >
+            Contact for sponsorship
+          </a>
+        </section>
+
+        <section className="games-section">
+          <h2>Games built with these assets</h2>
+          <p className="games-intro">
+            A few casual Android games in the works, made using resources like these.
+          </p>
+          <div className="games-grid">
+            <a href="#" className="game-card">
+              <div className="game-title">Snakes &amp; Ladders</div>
+              <div className="game-status">Coming soon to Play Store</div>
+            </a>
+            <a href="#" className="game-card">
+              <div className="game-title">Mahjong Solitaire</div>
+              <div className="game-status">In development</div>
+            </a>
+            <a href="#" className="game-card">
+              <div className="game-title">Word Connect</div>
+              <div className="game-status">In development</div>
+            </a>
+          </div>
+        </section>
 
         <footer>Prefer FBX or glTF format for the cleanest Unity import.</footer>
       </div>
@@ -152,6 +260,98 @@ export default function Home() {
           font-size: 0.88rem;
           line-height: 1.5;
           color: var(--text-muted);
+        }
+        .ad-slot {
+          margin: 28px 0;
+          padding: 8px;
+          border: 1px dashed var(--border);
+          border-radius: 4px;
+          text-align: center;
+          min-height: 90px;
+        }
+        .affiliate-section,
+        .sponsor-section {
+          margin-top: 36px;
+          padding-top: 28px;
+          border-top: 1px solid var(--border);
+        }
+        .affiliate-section h2,
+        .sponsor-section h2 {
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 600;
+          font-size: 1.3rem;
+          margin: 0 0 6px;
+        }
+        .section-intro {
+          color: var(--text-muted);
+          font-size: 0.9rem;
+          margin: 0 0 16px;
+        }
+        .affiliate-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          gap: 12px;
+        }
+        .affiliate-card {
+          display: block;
+          background: var(--surface);
+          border: 1px solid var(--border);
+          border-left: 3px solid var(--accent);
+          border-radius: 4px;
+          padding: 14px 16px;
+          text-decoration: none;
+          color: var(--text);
+        }
+        .sponsor-block {
+          display: inline-block;
+          background: var(--surface);
+          border: 1px solid var(--accent-2);
+          color: var(--accent-2);
+          border-radius: 6px;
+          padding: 10px 18px;
+          text-decoration: none;
+          font-size: 0.9rem;
+          font-weight: 600;
+        }
+        .games-section {
+          margin-top: 36px;
+          padding-top: 28px;
+          border-top: 1px solid var(--border);
+        }
+        .games-section h2 {
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 600;
+          font-size: 1.3rem;
+          margin: 0 0 6px;
+        }
+        .games-intro {
+          color: var(--text-muted);
+          font-size: 0.9rem;
+          margin: 0 0 16px;
+        }
+        .games-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 12px;
+        }
+        .game-card {
+          display: block;
+          background: var(--surface);
+          border: 1px solid var(--border);
+          border-radius: 4px;
+          padding: 14px 16px;
+          text-decoration: none;
+          color: var(--text);
+        }
+        .game-title {
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 600;
+          font-size: 0.98rem;
+          margin-bottom: 3px;
+        }
+        .game-status {
+          font-size: 0.8rem;
+          color: var(--accent-2);
         }
         footer {
           margin-top: 32px;
